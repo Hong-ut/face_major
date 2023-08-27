@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap');
+
+.font-ad {
+    font-family: 'ADLaM Display', cursive;
+  }
+
+  .custom-pink-text {
+    color: rgba(235, 166, 190, 1);
+  }
