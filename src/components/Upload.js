@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import shortid from 'shortid';
+import shortid from "shortid";
 import "../styles/Upload.css";
 import uploadLogo from "../assets/png/upload.png";
 // import {ImageModel} from 'react-teachable-machine';
@@ -42,7 +42,6 @@ const Upload = () => {
     // or files from your local hard drive
     // Note: the pose library adds "tmImage" object to your window (window.tmImage)
     model = await tmImage.load(modelURL, metadataURL);
-
   }
 
   async function predict() {
@@ -100,7 +99,6 @@ const Upload = () => {
     }
   };
 
-
   const FileUploadSubmit = async (e) => {
     e.preventDefault();
 
@@ -131,15 +129,15 @@ const Upload = () => {
   const output_prompts = {
     "Computer Science": `In computer science, distinctive facial structures often encompass open and inquisitive eyes that reflect deep curiosity. You might notice a determined jawline, signifying resilience in tackling complex challenges. Additionally, a thoughtful brow often accompanies analytical thinking. Remarkable computer scientists like Ada Lovelace, Alan Turing, and Grace Hopper shared these facial traits, embodying the blend of analytical thinking and creative problem-solving that defined their groundbreaking contributions to the field. 💡`,
 
-    'Chemistry': `The field of chemistry frequently associates distinct facial attributes with chemists. An intense gaze often denotes their focus on intricate details. You might notice a studious brow, indicating their commitment to precision, and a poised jawline, reflecting determination. Pioneers such as Marie Curie, Dmitri Mendeleev, and Linus Pauling shared these distinct facial features, embodying the essence of curiosity and scientific rigor that defines chemistry. 🧪`,
+    Chemistry: `The field of chemistry frequently associates distinct facial attributes with chemists. An intense gaze often denotes their focus on intricate details. You might notice a studious brow, indicating their commitment to precision, and a poised jawline, reflecting determination. Pioneers such as Marie Curie, Dmitri Mendeleev, and Linus Pauling shared these distinct facial features, embodying the essence of curiosity and scientific rigor that defines chemistry. 🧪`,
 
-    'Biology': `Biology enthusiasts often exhibit specific facial characteristics. An observant and perceptive look reflects their deep fascination with the natural world. You may notice a harmonious brow symbolizing their curiosity, and an expressive countenance mirroring their passion for life's intricacies. Visionaries like Charles Darwin, Jane Goodall, and Rosalind Franklin shared these distinctive facial features, embodying the spirit of exploration and the pursuit of life's mysteries that define biology. 🌿`,
+    Biology: `Biology enthusiasts often exhibit specific facial characteristics. An observant and perceptive look reflects their deep fascination with the natural world. You may notice a harmonious brow symbolizing their curiosity, and an expressive countenance mirroring their passion for life's intricacies. Visionaries like Charles Darwin, Jane Goodall, and Rosalind Franklin shared these distinctive facial features, embodying the spirit of exploration and the pursuit of life's mysteries that define biology. 🌿`,
 
-    'Education': `Educators typically possess inviting and understanding facial expressions. An empathetic look signifies their patient and empathetic nature. You may observe a kind and attentive gaze reflecting their commitment to nurturing young minds. Influential educators like Maria Montessori, John Dewey, and Malala Yousafzai shared these distinctive facial attributes, embodying the transformative power of education and its impact on shaping minds and societies. 📚`,
+    Education: `Educators typically possess inviting and understanding facial expressions. An empathetic look signifies their patient and empathetic nature. You may observe a kind and attentive gaze reflecting their commitment to nurturing young minds. Influential educators like Maria Montessori, John Dewey, and Malala Yousafzai shared these distinctive facial attributes, embodying the transformative power of education and its impact on shaping minds and societies. 📚`,
 
     "English Literature": `In the realm of English literature, individuals often have discerning and contemplative facial expressions. An expressive brow reflects their connection to narratives and a poetic sensibility. You might notice a thoughtful and imaginative gaze that signifies their passion for storytelling. Literary giants like William Shakespeare, Jane Austen, and Charles Dickens shared these distinct facial features, embodying the timeless art of words and storytelling that defines English literature. 📖`,
 
-    'Engineering': `Engineers commonly exhibit specific facial attributes. A focused and analytical look indicates dedication to designing innovative solutions. You may notice a determined jawline mirroring their resilience and a visionary brow reflecting their creative problem-solving skills. Engineering luminaries like Nikola Tesla, Thomas Edison, and Grace Hopper shared these distinctive facial attributes, embodying the ingenuity and progress that engineering brings to the world. 🔧`,
+    Engineering: `Engineers commonly exhibit specific facial attributes. A focused and analytical look indicates dedication to designing innovative solutions. You may notice a determined jawline mirroring their resilience and a visionary brow reflecting their creative problem-solving skills. Engineering luminaries like Nikola Tesla, Thomas Edison, and Grace Hopper shared these distinctive facial attributes, embodying the ingenuity and progress that engineering brings to the world. 🔧`,
 
     "Environmental Studies": `Individuals dedicated to environmental studies often convey eco-consciousness through their facial features. A serene and thoughtful gaze signifies commitment to sustainability, and an environmentally aware brow reflects their dedication to preserving the planet. These facial attributes embody the commitment of environmental champions like Rachel Carson, Wangari Maathai, and David Attenborough to safeguarding our environment. 🌍`,
 
@@ -152,20 +150,20 @@ const Upload = () => {
 
     "Health Sciences": `Healthcare professionals typically have compassionate and caring facial expressions. A poised brow symbolizes their attention to detail, and a reassuring countenance mirrors their empathy. You may notice an attentive and understanding gaze reflecting their commitment to well-being. Healthcare heroes like Florence Nightingale, Jonas Salk, and Marie Stopes shared these distinct facial attributes, embodying the essence of healing and scientific advancement that defines health sciences. ⚕️`,
 
-    'Mathematics': `Mathematicians often possess contemplative and analytical facial expressions. 
+    Mathematics: `Mathematicians often possess contemplative and analytical facial expressions. 
     A studious brow signifies their commitment to precision and logical thinking. You might notice
      a focused and determined countenance mirroring their dedication to solving complex problems. 
      Mathematical geniuses like Pythagoras, Ada Lovelace, and Leonhard Euler shared these distinct 
      facial attributes, embodying the essence of mathematical exploration and discovery. 🔢`,
 
-    'Music': `Musicians often have melodious and expressive facial expressions. Musical brows and 
+    Music: `Musicians often have melodious and expressive facial expressions. Musical brows and 
     a soulful gaze symbolize their passion for rhythm and harmony. You may observe an artistic and 
     imaginative countenance that reflects their artistic souls. Legendary musicians like Ludwig van 
     Beethoven, Aretha Franklin, and Wolfgang Amadeus Mozart shared these distinctive facial 
     attributes, embodying the profound creativity and emotional depth that define the realm of 
     music. 🎶`,
 
-    'Physics': `Physicists often have inquisitive and probing gazes that reflect their fascination
+    Physics: `Physicists often have inquisitive and probing gazes that reflect their fascination
      with the fundamental laws of the universe. An observant brow signifies their dedication to 
      exploring the mysteries of space and time. You might notice a thoughtful countenance that 
      mirrors their pursuit of understanding. Pioneers like Albert Einstein, Marie Curie, and Richard 
@@ -176,27 +174,28 @@ const Upload = () => {
 
     "Business Administration": `In the world of business administration, individuals often exhibit a poised and determined look. A shrewd and analytical brow signifies their commitment to problem-solving and innovation. You may notice an assertive countenance that reflects their leadership qualities and a confident jawline symbolizing their resolute decision-making. Business tycoons like Warren Buffett, Sheryl Sandberg, and Elon Musk shared these distinctive facial attributes, embodying the essence of entrepreneurial spirit and business excellence that defines business administration. 💼`,
 
-    'History': `Historians often possess reflective and discerning gazes that reveal their deep engagement with the past. A contemplative brow symbolizes their dedication to uncovering historical truths, and an inquisitive countenance mirrors their passion for understanding human history. You might notice a nose for uncovering hidden narratives and a jawline that signifies their resilience in navigating complex historical contexts. Influential historians like Herodotus, Annales School scholars, and Howard Zinn shared these distinctive facial attributes, embodying the essence of exploring and interpreting the past that defines history. 📜`,
+    History: `Historians often possess reflective and discerning gazes that reveal their deep engagement with the past. A contemplative brow symbolizes their dedication to uncovering historical truths, and an inquisitive countenance mirrors their passion for understanding human history. You might notice a nose for uncovering hidden narratives and a jawline that signifies their resilience in navigating complex historical contexts. Influential historians like Herodotus, Annales School scholars, and Howard Zinn shared these distinctive facial attributes, embodying the essence of exploring and interpreting the past that defines history. 📜`,
   };
 
   const emojis = {
-    'Computer Science': '💻',
-    'Chemistry': '🧪',
-    'Biology': '🌱',
-    'Education': '📚',
-    'English Literature': '📖',
-    'Engineering': '🛠️',
-    'Environmental Studies': '🌍',
-    'Fine Arts': '🎨',
-    'Health Sciences': '⚕️',
-    'Mathematics': '🔢',
-    'Music': '🎶',
-    'Physics': '🌌',
-    'Political Sciences': '🌐',
-    'Business Administration': '💼',
-    'History': '📜'  }
-    
-    const currentUrl = window.location.href;
+    "Computer Science": "💻",
+    Chemistry: "🧪",
+    Biology: "🌱",
+    Education: "📚",
+    "English Literature": "📖",
+    Engineering: "🛠️",
+    "Environmental Studies": "🌍",
+    "Fine Arts": "🎨",
+    "Health Sciences": "⚕️",
+    Mathematics: "🔢",
+    Music: "🎶",
+    Physics: "🌌",
+    "Political Sciences": "🌐",
+    "Business Administration": "💼",
+    History: "📜",
+  };
+
+  const currentUrl = window.location.href;
 
   return (
     <div className="row justify-content-center h-100">
@@ -281,10 +280,10 @@ const Upload = () => {
                           <h1 class="text-4xl font-bold custom-pink-text mb-2">
                             {result[0].className} {emojis[result[0].className]}
                           </h1>
-                          <p className="">{output_prompts[result[0].className]}</p>
-                          
+                          <p className="">
+                            {output_prompts[result[0].className]}
+                          </p>
                         </>
-                        
                       ) : (
                         <>
                           <Loading />
@@ -307,9 +306,16 @@ const Upload = () => {
                       const boxClassName = classNames[index]; // Get the appropriate class name
 
                       return (
-                        <div key={index} className="flex items-center justify-center w-5/6">
+                        <div
+                          key={index}
+                          className="flex items-center justify-center w-5/6"
+                        >
                           <div className="w-2/5 text-left">
-                            <h1 className="font-bold text-lg">{item.className}</h1>
+                            <h1 className="font-bold text-base">
+                              {item.className === "Business Administration"
+                                ? "Business"
+                                : item.className}
+                            </h1>{" "}
                           </div>
                           <div
                             className={`${boxClassName}-box w-3/5 m-1 flex items-center justify-center`}
@@ -320,37 +326,60 @@ const Upload = () => {
                                 width: `${item.probability * 100}%`,
                               }}
                             >
-                              <h1 className="text-center align-middle text-lg">
-                                {Math.round(item.probability * 100).toString() + "%"}
+                              <h1 className="text-center align-middle text-medium">
+                                {Math.round(item.probability * 100).toString() +
+                                  "%"}
                               </h1>
                             </div>
                           </div>
-                      
+
                           {/* You can add more content here */}
                         </div>
                       );
-                      
-                      
                     })}
                   </div>
 
                   <div>
-                  <div className="mt-4">
-                      <FacebookShareButton style={{ marginRight: "20px" }} url={currentUrl}>
-                        <FacebookIcon size={48} round={true} borderRadius={24}></FacebookIcon>
+                    <div className="mt-4">
+                      <FacebookShareButton
+                        style={{ marginRight: "20px" }}
+                        url={currentUrl}
+                      >
+                        <FacebookIcon
+                          size={48}
+                          round={true}
+                          borderRadius={24}
+                        ></FacebookIcon>
                       </FacebookShareButton>
-                      <FacebookMessengerShareButton style={{ marginRight: "20px" }} url={currentUrl}>
-                        <FacebookMessengerIcon size={48} round={true} borderRadius={24}></FacebookMessengerIcon>
+                      <FacebookMessengerShareButton
+                        style={{ marginRight: "20px" }}
+                        url={currentUrl}
+                      >
+                        <FacebookMessengerIcon
+                          size={48}
+                          round={true}
+                          borderRadius={24}
+                        ></FacebookMessengerIcon>
                       </FacebookMessengerShareButton>
-                      <TwitterShareButton style={{ marginRight: "20px" }} url={currentUrl}>
-                        <TwitterIcon size={48} round={true} borderRadius={24}></TwitterIcon>
+                      <TwitterShareButton
+                        style={{ marginRight: "20px" }}
+                        url={currentUrl}
+                      >
+                        <TwitterIcon
+                          size={48}
+                          round={true}
+                          borderRadius={24}
+                        ></TwitterIcon>
                       </TwitterShareButton>
                       <LineShareButton url={currentUrl}>
-                        <LineIcon size={48} round={true} borderRadius={24}></LineIcon>
+                        <LineIcon
+                          size={48}
+                          round={true}
+                          borderRadius={24}
+                        ></LineIcon>
                       </LineShareButton>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -361,8 +390,7 @@ const Upload = () => {
           <div className="kb-attach-box">
             <hr />
             {Files.map((data, index) => {
-              const { id, filename, fileimage, datetime, filesize } =
-                data;
+              const { id, filename, fileimage, datetime, filesize } = data;
               return (
                 <div className="file-atc-box" key={index}>
                   {filename.match(/.(jpg|jpeg|png|gif|svg)$/i) ? (
