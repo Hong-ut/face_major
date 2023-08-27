@@ -292,7 +292,7 @@ const Upload = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center justify-center w-5/6">
+                  <div className="flex flex-col items-center justify-center w-full">
                     {result.map((item, index) => {
                       const classNames = [
                         "first",
@@ -314,8 +314,10 @@ const Upload = () => {
                             <h1 className="font-bold text-base">
                               {item.className === "Business Administration"
                                 ? "Business"
+                                : item.className === "English Literature"
+                                ? "Literature"
                                 : item.className}
-                            </h1>{" "}
+                            </h1>
                           </div>
                           <div
                             className={`${boxClassName}-box w-3/5 m-1 flex items-center justify-center`}
