@@ -241,8 +241,8 @@ const Upload = () => {
               {/* justify-center => center items HORIZONTALL 
                     justify-center => center items VERTICALLY */}
               <div className="kb-data-box h-100 flex items-center justify-center">
-                <div className="flex flex-col">
-                  <div className="ml-60 mr-60 mt-10 mb-10">
+                <div className="flex flex-col overflow-hidden justify-center items-center">
+                  <div className="m-10 w-3/4">
                     <div className="file-upload-box flex flex-col">
                       {selectedfile.map((data, index) => {
                         const {
@@ -281,7 +281,7 @@ const Upload = () => {
                           <h1 class="text-4xl font-bold custom-pink-text mb-2">
                             {result[0].className} {emojis[result[0].className]}
                           </h1>
-                          <p>{output_prompts[result[0].className]}</p>
+                          <p className="">{output_prompts[result[0].className]}</p>
                           
                         </>
                         
@@ -293,7 +293,7 @@ const Upload = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center justify-center ">
+                  <div className="flex flex-col items-center justify-center w-5/6">
                     {result.map((item, index) => {
                       const classNames = [
                         "first",
@@ -307,17 +307,12 @@ const Upload = () => {
                       const boxClassName = classNames[index]; // Get the appropriate class name
 
                       return (
-                        <div
-                          key={index}
-                          className="flex items-center justify-center w-5/6"
-                        >
-                          <div className="basis-1/4 text-left">
-                            <h1 className="font-bold text-lg">
-                              {item.className}
-                            </h1>
+                        <div key={index} className="flex items-center justify-center w-5/6">
+                          <div className="w-2/5 text-left">
+                            <h1 className="font-bold text-lg">{item.className}</h1>
                           </div>
                           <div
-                            className={`${boxClassName}-box basis-3/4 m-1 flex items-center justify-center`}
+                            className={`${boxClassName}-box w-3/5 m-1 flex items-center justify-center`}
                           >
                             <div
                               className={`${boxClassName}-bar flex items-center justify-center min-w-[6%] text-white text-sm font-bold`}
@@ -326,21 +321,21 @@ const Upload = () => {
                               }}
                             >
                               <h1 className="text-center align-middle text-lg">
-                                {Math.round(item.probability * 100).toString() +
-                                  "%"}
+                                {Math.round(item.probability * 100).toString() + "%"}
                               </h1>
                             </div>
                           </div>
-
+                      
                           {/* You can add more content here */}
                         </div>
                       );
+                      
+                      
                     })}
                   </div>
 
                   <div>
-                  <div>
-                    <>
+                  <div className="mt-4">
                       <FacebookShareButton style={{ marginRight: "20px" }} url={currentUrl}>
                         <FacebookIcon size={48} round={true} borderRadius={24}></FacebookIcon>
                       </FacebookShareButton>
@@ -353,7 +348,6 @@ const Upload = () => {
                       <LineShareButton url={currentUrl}>
                         <LineIcon size={48} round={true} borderRadius={24}></LineIcon>
                       </LineShareButton>
-                    </>
                     </div>
                   </div>
 
