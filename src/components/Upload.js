@@ -42,9 +42,7 @@ const Upload = () => {
     // or files from your local hard drive
     // Note: the pose library adds "tmImage" object to your window (window.tmImage)
     model = await tmImage.load(modelURL, metadataURL);
-    //총 클래스 수
-    let maxPredictions;
-    maxPredictions = model.getTotalClasses();
+
   }
 
   async function predict() {
@@ -102,14 +100,6 @@ const Upload = () => {
     }
   };
 
-  const DeleteSelectFile = (id) => {
-    if (window.confirm("Are you sure you want to delete this Image?")) {
-      const result = selectedfile.filter((data) => data.id !== id);
-      SetSelectedFile(result);
-    } else {
-      // alert('No');
-    }
-  };
 
   const FileUploadSubmit = async (e) => {
     e.preventDefault();
@@ -234,6 +224,7 @@ const Upload = () => {
                       <img
                         src={uploadLogo}
                         className="object-contain h-36 w-96 mb-4 non-hoverable-image cursor-none"
+                        alt="Upload Logo"
                       />
                       <h1 className="text-xl font-bold ml-20 mr-20 text-center font-ad">
                         Upload a Photo of Yourself
@@ -257,10 +248,10 @@ const Upload = () => {
                         const {
                           id,
                           filename,
-                          filetype,
+                          // filetype,
                           fileimage,
-                          datetime,
-                          filesize,
+                          // datetime,
+                          // filesize,
                         } = data;
 
                         return (
@@ -376,7 +367,7 @@ const Upload = () => {
           <div className="kb-attach-box">
             <hr />
             {Files.map((data, index) => {
-              const { id, filename, filetype, fileimage, datetime, filesize } =
+              const { id, filename, fileimage, datetime, filesize } =
                 data;
               return (
                 <div className="file-atc-box" key={index}>

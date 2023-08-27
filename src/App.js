@@ -3,18 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Im
 import Home from './pages/Home';
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2700);
-  }, []);
-
-  // if (loading) {
-  //   return <Loading />;
-  // }
-
   return (
     <div className="App">
       <Router> {/* Wrap your component with the Router */}
