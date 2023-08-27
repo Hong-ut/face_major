@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import shortid from "https://cdn.skypack.dev/shortid@2.2.16";
+import shortid from 'shortid';
 import "../styles/Upload.css";
 import uploadLogo from "../assets/png/upload.png";
 // import {ImageModel} from 'react-teachable-machine';
