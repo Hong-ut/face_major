@@ -31,7 +31,7 @@ export default function NavBar() {
 
                   <a
                     href='/'
-                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-3xl font-ad custom-pink-text hover:border-gray-300 hover:text-gray-700"
+                    className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-3xl font-ad custom-pink-text hover:border-gray-300 hover:text-red-400"
                   >
                     FaceMajor
                   </a>

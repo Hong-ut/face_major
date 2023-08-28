@@ -197,17 +197,27 @@ const Upload = () => {
 
   const currentUrl = window.location.href;
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="row justify-content-center h-100">
       <div className="col-md-8">
         {selectedfile.length === 0 ? (
-          <div className="card mt-3 ">
+          <div className="card ">
             <div className="card-body">
               {/* justify-center => center items HORIZONTALL 
                           justify-center => center items VERTICALLY */}
-              <div className="kb-data-box flex items-center justify-center">
+              <div className="kb-data-box flex flex-col items-center justify-center">
                 <form
-                  className="h-1/2 w-4/5 ml-60 mr-60 mt-10 mb-10"
+                  className="h-full w-4/6 ml-60 mr-60"
                   onSubmit={FileUploadSubmit}
                 >
                   <div className="kb-file-upload ">
@@ -231,17 +241,50 @@ const Upload = () => {
                     </div>
                   </div>
                 </form>
+                <h1 className="mt-2 font-ad text-xl cursor-default">
+                  *Disclaimer: We Never Save Your Photos*
+                </h1>
+
+                <div className="p-4">
+                  <button
+                    className="custom-pink-bg font-ad text-white text-lg font-semibold py-2 px-4 rounded-xl hover:bg-red-400 focus:outline-none focus:shadow-outline"
+                    style={{ cursor: "pointer" }}
+                    onClick={openModal}
+                  >
+                    How Does AI Find Your Ideal Major?
+                  </button>
+                  {isModalOpen && (
+                    <div className="fixed inset-0 flex items-center justify-center z-50">
+                      <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+                      <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded-xl shadow-lg z-50 p-4">
+                        <p className="font-ad text-black text-lg">
+                        Our Machine Learning Model, trained on 100,000 facial data samples from 
+                        successful professionals, selects your ideal major based on your facial 
+                        attributes, with gender and racial bias addressed through meticulous data 
+                        processing.
+                        </p>
+                        <button
+                          className="mt-3 custom-pink-bg font-ad text-white text-lg font-semibold py-2 px-4 rounded-xl hover:bg-red-400 focus:outline-none focus:shadow-outline"
+                          style={{ cursor: "pointer" }}
+                          onClick={closeModal}
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         ) : (
-          <div className="card-2 mt-3  ">
+          <div className="card-2 mt-14  ">
             <div className="card-body">
               {/* justify-center => center items HORIZONTALL 
                     justify-center => center items VERTICALLY */}
               <div className="kb-data-box h-100 flex items-center justify-center">
                 <div className="flex flex-col overflow-hidden justify-center items-center">
-                  <div className="m-10 w-3/4">
+                  <div className="m-10 w-2/5">
                     <div className="file-upload-box flex flex-col">
                       {selectedfile.map((data, index) => {
                         const {
@@ -280,7 +323,7 @@ const Upload = () => {
                           <h1 class="text-4xl font-bold custom-pink-text mb-2">
                             {result[0].className} {emojis[result[0].className]}
                           </h1>
-                          <p className="">
+                          <p className="output_prompt">
                             {output_prompts[result[0].className]}
                           </p>
                         </>
