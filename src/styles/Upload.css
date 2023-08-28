@@ -19,6 +19,15 @@
   font-size: large;
 }
 
+.srcimg-width {
+  width: 30%
+}
+
+.card-body {
+  border-radius: 0px;
+  padding: 5px;
+}
+
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .output_prompt {
@@ -28,6 +37,13 @@
   .major_output {
     font: bold;
     font-size: medium;
+  }
+  .srcimg-width {
+    width: 50%
+  }
+  .card-body {
+    border-radius: 10px;
+    padding:0px;
   }
   
 }
@@ -125,13 +141,6 @@ a, a:hover, a:focus {
     /* Remove the fixed height */
   }
 
-.card-body {
-    /* padding: 40px; */
-    /* margin-bottom: 5px; */
-  border-radius: 10px;
-  /* height:100%; */
-  /* border: 2px solid #000; Set your desired border color and style here */
-}
 
 .btn-primary {
     border-color: #5a8dee !important;

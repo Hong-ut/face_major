@@ -294,7 +294,7 @@ const Upload = () => {
                     justify-center => center items VERTICALLY */}
               <div className="kb-data-box h-100 flex items-center justify-center">
                 <div className="flex flex-col overflow-hidden justify-center items-center">
-                  <div className="m-10 w-2/5">
+                  <div className="m-10 srcimg-width">
                     <div className="file-upload-box flex flex-col">
                       {selectedfile.map((data, index) => {
                         const {
