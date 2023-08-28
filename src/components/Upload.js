@@ -106,54 +106,84 @@ const Upload = () => {
   // };
 
   const output_prompts = {
-    "Computer Science": `In computer science, distinctive facial structures often encompass open and inquisitive eyes that reflect deep curiosity. You might notice a determined jawline, signifying resilience in tackling complex challenges. Additionally, a thoughtful brow often accompanies analytical thinking. Remarkable computer scientists like Ada Lovelace, Alan Turing, and Grace Hopper shared these facial traits, embodying the blend of analytical thinking and creative problem-solving that defined their groundbreaking contributions to the field. 💡`,
+    "Computer Science": `In computer science, distinctive facial structures often encompass open and 
+    inquisitive eyes that reflect deep curiosity. You might notice a determined jawline, signifying 
+    resilience in tackling complex challenges. Remarkable computer scientists like Ada Lovelace, Alan Turing, and 
+    Grace Hopper shared these facial traits. 💡`,
 
-    Chemistry: `The field of chemistry frequently associates distinct facial attributes with chemists. An intense gaze often denotes their focus on intricate details. You might notice a studious brow, indicating their commitment to precision, and a poised jawline, reflecting determination. Pioneers such as Marie Curie, Dmitri Mendeleev, and Linus Pauling shared these distinct facial features, embodying the essence of curiosity and scientific rigor that defines chemistry. 🧪`,
+    Chemistry: `The field of chemistry frequently associates distinct facial attributes with chemists. An intense gaze 
+    often denotes their focus on intricate details. You might notice a studious brow, indicating their commitment to 
+    precision, and a poised jawline, reflecting determination. Pioneers such as Marie Curie, Dmitri Mendeleev, and 
+    Linus Pauling shared these distinct facial features. 🧪`,
 
-    Biology: `Biology enthusiasts often exhibit specific facial characteristics. An observant and perceptive look reflects their deep fascination with the natural world. You may notice a harmonious brow symbolizing their curiosity, and an expressive countenance mirroring their passion for life's intricacies. Visionaries like Charles Darwin, Jane Goodall, and Rosalind Franklin shared these distinctive facial features, embodying the spirit of exploration and the pursuit of life's mysteries that define biology. 🌿`,
+    Biology: `Biology enthusiasts often exhibit specific facial characteristics. An observant and perceptive look 
+    reflects their deep fascination with the natural world. You may notice a harmonious brow symbolizing their 
+    curiosity, and an expressive countenance mirroring their passion for life's intricacies. Visionaries like 
+    Charles Darwin, Jane Goodall, and Rosalind Franklin shared these distinctive facial features. 🌿`,
 
-    Education: `Educators typically possess inviting and understanding facial expressions. An empathetic look signifies their patient and empathetic nature. You may observe a kind and attentive gaze reflecting their commitment to nurturing young minds. Influential educators like Maria Montessori, John Dewey, and Malala Yousafzai shared these distinctive facial attributes, embodying the transformative power of education and its impact on shaping minds and societies. 📚`,
+    Education: `Educators typically possess inviting and understanding facial expressions. An empathetic look 
+    signifies their patient and empathetic nature. You may observe a kind and attentive gaze reflecting their 
+    commitment to nurturing young minds. Influential educators like Maria Montessori, John Dewey, and Malala 
+    Yousafzai shared these distinctive facial attributes. 📚`,
 
-    "English Literature": `In the realm of English literature, individuals often have discerning and contemplative facial expressions. An expressive brow reflects their connection to narratives and a poetic sensibility. You might notice a thoughtful and imaginative gaze that signifies their passion for storytelling. Literary giants like William Shakespeare, Jane Austen, and Charles Dickens shared these distinct facial features, embodying the timeless art of words and storytelling that defines English literature. 📖`,
+    "English Literature": `In the realm of English literature, individuals often have discerning and contemplative 
+    facial expressions. An expressive brow reflects their connection to narratives and a poetic sensibility. You might 
+    notice a thoughtful and imaginative gaze that signifies their passion for storytelling. Literary giants like William 
+    Shakespeare, Jane Austen, and Charles Dickens shared these distinct facial features. 📖`,
 
-    Engineering: `Engineers commonly exhibit specific facial attributes. A focused and analytical look indicates dedication to designing innovative solutions. You may notice a determined jawline mirroring their resilience and a visionary brow reflecting their creative problem-solving skills. Engineering luminaries like Nikola Tesla, Thomas Edison, and Grace Hopper shared these distinctive facial attributes, embodying the ingenuity and progress that engineering brings to the world. 🔧`,
+    Engineering: `Engineers commonly exhibit specific facial attributes. A focused and analytical look indicates 
+    dedication to designing innovative solutions. You may notice a determined jawline mirroring their resilience 
+    and a visionary brow reflecting their creative problem-solving skills. Engineering luminaries like Nikola 
+    Tesla, Thomas Edison, and Grace Hopper shared these distinctive facial attributes. 🔧`,
 
-    "Environmental Studies": `Individuals dedicated to environmental studies often convey eco-consciousness through their facial features. A serene and thoughtful gaze signifies commitment to sustainability, and an environmentally aware brow reflects their dedication to preserving the planet. These facial attributes embody the commitment of environmental champions like Rachel Carson, Wangari Maathai, and David Attenborough to safeguarding our environment. 🌍`,
+    "Environmental Studies": `Individuals dedicated to environmental studies often convey eco-consciousness through 
+    their facial features. A serene and thoughtful gaze signifies commitment to sustainability, and an environmentally 
+    aware brow reflects their dedication to preserving the planet. These facial attributes embody the commitment of 
+    environmental champions like Rachel Carson, Wangari Maathai, and David Attenborough to safeguarding our 
+    environment. 🌍`,
 
     "Fine Arts": `The world of fine arts often recognizes individuals with unique facial 
     expressions. A vivid and expressive countenance showcases their passion for aesthetics and 
     self-expression. You may observe artistic brows and an emotional depth in their gaze 
     reflecting their artistic souls. Visionaries like Leonardo da Vinci, Frida Kahlo, and 
-    Vincent van Gogh shared these distinctive facial attributes, embodying the boundless 
-    creativity and emotional depth that define the realm of fine arts. 🎨`,
+    Vincent van Gogh shared these distinctive facial attributes. 🎨`,
 
-    "Health Sciences": `Healthcare professionals typically have compassionate and caring facial expressions. A poised brow symbolizes their attention to detail, and a reassuring countenance mirrors their empathy. You may notice an attentive and understanding gaze reflecting their commitment to well-being. Healthcare heroes like Florence Nightingale, Jonas Salk, and Marie Stopes shared these distinct facial attributes, embodying the essence of healing and scientific advancement that defines health sciences. ⚕️`,
+    "Health Sciences": `Healthcare professionals typically have compassionate and caring facial expressions. 
+    A poised brow symbolizes their attention to detail, and a reassuring countenance mirrors their empathy. You may 
+    notice an attentive and understanding gaze reflecting their commitment to well-being. Healthcare heroes like 
+    Florence Nightingale, Jonas Salk, and Marie Stopes shared these distinct facial attributes. ⚕️`,
 
     Mathematics: `Mathematicians often possess contemplative and analytical facial expressions. 
     A studious brow signifies their commitment to precision and logical thinking. You might notice
      a focused and determined countenance mirroring their dedication to solving complex problems. 
      Mathematical geniuses like Pythagoras, Ada Lovelace, and Leonhard Euler shared these distinct 
-     facial attributes, embodying the essence of mathematical exploration and discovery. 🔢`,
+     facial attributes. 🔢`,
 
     Music: `Musicians often have melodious and expressive facial expressions. Musical brows and 
     a soulful gaze symbolize their passion for rhythm and harmony. You may observe an artistic and 
     imaginative countenance that reflects their artistic souls. Legendary musicians like Ludwig van 
     Beethoven, Aretha Franklin, and Wolfgang Amadeus Mozart shared these distinctive facial 
-    attributes, embodying the profound creativity and emotional depth that define the realm of 
-    music. 🎶`,
+    attributes. 🎶`,
 
     Physics: `Physicists often have inquisitive and probing gazes that reflect their fascination
      with the fundamental laws of the universe. An observant brow signifies their dedication to 
-     exploring the mysteries of space and time. You might notice a thoughtful countenance that 
-     mirrors their pursuit of understanding. Pioneers like Albert Einstein, Marie Curie, and Richard 
-     Feynman shared these distinctive facial attributes, embodying the essence of scientific 
-     exploration and discovery. 🌌`,
+     exploring the mysteries of space and time. Pioneers like Albert Einstein, Marie Curie, and Richard 
+     Feynman shared these distinctive facial attributes. 🌌`,
 
-    "Political Sciences": `Individuals drawn to political science often possess a determined and insightful gaze, indicative of their commitment to understanding complex social and political dynamics. A thoughtful brow symbolizes their critical thinking and analysis, as well as a diplomatic countenance that mirrors their dedication to diplomacy and governance. Political visionaries like Nelson Mandela, Eleanor Roosevelt, and Winston Churchill shared these distinct facial attributes, embodying the essence of leadership and political change that defines political science. 🌐`,
+    "Political Sciences": `Individuals drawn to political science often possess a determined and insightful gaze, 
+    indicative of their commitment to understanding complex social and political dynamics. A thoughtful brow 
+    symbolizes their critical thinking and analysis. Political visionaries like Nelson Mandela, Eleanor Roosevelt, and
+     Winston Churchill shared these distinct facial attributes. 🌐`,
 
-    "Business Administration": `In the world of business administration, individuals often exhibit a poised and determined look. A shrewd and analytical brow signifies their commitment to problem-solving and innovation. You may notice an assertive countenance that reflects their leadership qualities and a confident jawline symbolizing their resolute decision-making. Business tycoons like Warren Buffett, Sheryl Sandberg, and Elon Musk shared these distinctive facial attributes, embodying the essence of entrepreneurial spirit and business excellence that defines business administration. 💼`,
+    "Business Administration": `In the world of business administration, individuals often exhibit a poised and 
+    determined look. A shrewd and analytical brow signifies their commitment to problem-solving and innovation. 
+    You may notice a confident jawline symbolizing their resolute decision-making. Business tycoons like Warren Buffett, 
+    Sheryl Sandberg, and Elon Musk shared these distinctive facial attributes. 💼`,
 
-    History: `Historians often possess reflective and discerning gazes that reveal their deep engagement with the past. A contemplative brow symbolizes their dedication to uncovering historical truths, and an inquisitive countenance mirrors their passion for understanding human history. You might notice a nose for uncovering hidden narratives and a jawline that signifies their resilience in navigating complex historical contexts. Influential historians like Herodotus, Annales School scholars, and Howard Zinn shared these distinctive facial attributes, embodying the essence of exploring and interpreting the past that defines history. 📜`,
+    History: `Historians often possess reflective and discerning gazes that reveal their deep engagement with 
+    the past. A contemplative brow symbolizes their dedication to uncovering historical truths, and a jawline that 
+    signifies their resilience in navigating complex historical contexts. Influential historians like Herodotus, Annales 
+    School scholars, and Howard Zinn shared these distinctive facial attributes. 📜`,
   };
 
   const emojis = {
