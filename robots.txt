@@ -1,2 +1,3 @@
-User-agent: *Allow:/
-Sitemap: https://facemajor.netlify.app/sitemap.xml
+User-agent: *
+Allow:/
+Sitemap:https://facemajor.netlify.app/sitemap.xml
