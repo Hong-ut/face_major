@@ -334,7 +334,7 @@ const Upload = () => {
                           className="flex items-center justify-center w-5/6"
                         >
                           <div className="w-2/5 text-left">
-                            <h1 className="font-bold text-base">
+                            <h1 className="major_output font-ad">
                               {item.className === "Business Administration"
                                 ? "Business"
                                 : item.className === "English Literature"

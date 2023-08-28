@@ -14,12 +14,22 @@
   /* Other properties here for non-mobile devices */
 }
 
+.major_output {
+  font: bold;
+  font-size: large;
+}
+
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .output_prompt {
     font-size: large;
     /* Other properties here for mobile devices */
   }
+  .major_output {
+    font: bold;
+    font-size: medium;
+  }
+  
 }
 
 
