@@ -6,6 +6,23 @@
 @import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+/* Default styling for non-mobile devices */
+.output_prompt {
+  color: #fff;
+  font-size: x-large;
+  font-family: 'ADLaM Display', cursive;
+  /* Other properties here for non-mobile devices */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .output_prompt {
+    font-size: large;
+    /* Other properties here for mobile devices */
+  }
+}
+
+
 .form-container {
     /* Your existing styles here */
   
@@ -24,13 +41,6 @@
 .font-ad {
     font-family: 'ADLaM Display', cursive;
   }
-
-/* CSS */
-.output_prompt {
-    color: #fff;
-    font-size: x-large;
-    font-family: 'ADLaM Display', cursive;
-}
 
 .non-hoverable-image {
     pointer-events: none;
