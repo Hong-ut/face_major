@@ -4,7 +4,6 @@ import NavBar from "../components/NavBar";
 import "../App.css";
 
 const Home = () => {
-
   return (
     <div className="h-100">
       <NavBar></NavBar>

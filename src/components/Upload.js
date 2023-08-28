@@ -12,9 +12,9 @@ import {
   FacebookMessengerIcon,
   TwitterShareButton,
   TwitterIcon,
-  LineShareButton,
-  LineIcon,
 } from "react-share";
+import kakao from "../assets/png/kakaotalk.png";
+import Kakaoad from "./Kakaoad";
 
 const URL = "https://teachablemachine.withgoogle.com/models/ims18YRgK/";
 const modelURL = URL + "model.json";
@@ -426,13 +426,17 @@ const Upload = () => {
                           borderRadius={24}
                         ></TwitterIcon>
                       </TwitterShareButton>
-                      <LineShareButton url={currentUrl}>
-                        <LineIcon
-                          size={48}
-                          round={true}
-                          borderRadius={24}
-                        ></LineIcon>
-                      </LineShareButton>
+                      <button
+                        onClick={() =>
+                          Kakaoad("/", "FaceMajor")
+                        }
+                      >
+                        <img
+                          className="w-12 h-12"
+                          src={kakao}
+                          alt={"Kakao Logo"}
+                        />
+                      </button>
                     </div>
                   </div>
                 </div>
