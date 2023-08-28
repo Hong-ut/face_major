@@ -21,7 +21,7 @@ const Home = () => {
         <h1 className="mb-2 font-ad text-2xl">Select Your Gender</h1>
         <input type="checkbox" id="gender" />
         <label for="gender">
-          <span class="knob">
+          <span className="knob">
             <i></i>
           </span>
         </label>

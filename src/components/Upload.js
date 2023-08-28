@@ -24,7 +24,7 @@ let model;
 
 const Upload = () => {
   const [selectedfile, SetSelectedFile] = useState([]);
-  const [Files, SetFiles] = useState([]);
+  // const [Files, SetFiles] = useState([]);
   const [result, setResult] = useState([]);
 
   useEffect(() => {
@@ -32,15 +32,6 @@ const Upload = () => {
   }, [selectedfile]);
 
   async function init() {
-    // let isIos = false;
-    // // fix when running demo in ios, video will be frozen;
-    // if (window.navigator.userAgent.indexOf('iPhone') > -1 || window.navigator.userAgent.indexOf('iPad') > -1) {
-    //   isIos = true;
-    // }
-    // load the model and metadata
-    // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-    // or files from your local hard drive
-    // Note: the pose library adds "tmImage" object to your window (window.tmImage)
     model = await tmImage.load(modelURL, metadataURL);
   }
 
@@ -52,11 +43,8 @@ const Upload = () => {
     prediction.sort(
       (a, b) => parseFloat(b.probability) - parseFloat(a.probability)
     );
-    // console.log(prediction[0].className);
-    console.log(prediction.slice(0, 5));
+    // console.log(prediction.slice(0, 5));
     setResult(prediction.slice(0, 5));
-    // console.log("가장높은확률 : ", prediction[0].className);
-    // KakaoLoadTwo();
   }
 
   const filesizes = (bytes, decimals = 2) => {
@@ -84,8 +72,8 @@ const Upload = () => {
               filename: e.target.files[i].name,
               filetype: e.target.files[i].type,
               fileimage: reader.result,
-              datetime:
-                e.target.files[i].lastModifiedDate.toLocaleString("en-IN"),
+              // datetime:
+              // e.target.files[i].lastModifiedDate.toLocaleString("en-IN"),
               filesize: filesizes(e.target.files[i].size),
             },
           ];
@@ -98,33 +86,24 @@ const Upload = () => {
       }
     }
   };
+  // this handler function doesn't matter because only the selectedFile matters (this updates Files)
+  // const FileUploadSubmit = async (e) => {
+  //   e.preventDefault();
 
-  const FileUploadSubmit = async (e) => {
-    e.preventDefault();
-
-    // form reset on submit
-    e.target.reset();
-    if (selectedfile.length > 0) {
-      for (let index = 0; index < selectedfile.length; index++) {
-        SetFiles((preValue) => {
-          return [...preValue, selectedfile[index]];
-        });
-      }
-      SetSelectedFile([]);
-    } else {
-      alert("Please select file");
-    }
-    // console.log('test')
-  };
-
-  const DeleteFile = async (id) => {
-    if (window.confirm("Are you sure you want to delete this Image?")) {
-      const result = Files.filter((data) => data.id !== id);
-      SetFiles(result);
-    } else {
-      // alert('No');
-    }
-  };
+  //   // form reset on submit
+  //   e.target.reset();
+  //   if (selectedfile.length > 0) {
+  //     for (let index = 0; index < selectedfile.length; index++) {
+  //       SetFiles((preValue) => {
+  //         return [...preValue, selectedfile[index]];
+  //       });
+  //     }
+  //     SetSelectedFile([]);
+  //   } else {
+  //     alert("Please select file");
+  //   }
+  //   // console.log('test')
+  // };
 
   const output_prompts = {
     "Computer Science": `In computer science, distinctive facial structures often encompass open and inquisitive eyes that reflect deep curiosity. You might notice a determined jawline, signifying resilience in tackling complex challenges. Additionally, a thoughtful brow often accompanies analytical thinking. Remarkable computer scientists like Ada Lovelace, Alan Turing, and Grace Hopper shared these facial traits, embodying the blend of analytical thinking and creative problem-solving that defined their groundbreaking contributions to the field. 💡`,
@@ -218,7 +197,7 @@ const Upload = () => {
               <div className="kb-data-box flex flex-col items-center justify-center">
                 <form
                   className="h-full w-4/6 ml-60 mr-60"
-                  onSubmit={FileUploadSubmit}
+                  onSubmit={() => console.log("test")}
                 >
                   <div className="kb-file-upload ">
                     <div className="file-upload-box form-container h-100 flex flex-col items-center justify-center rounded-3xl">
@@ -258,10 +237,11 @@ const Upload = () => {
                       <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
                       <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded-xl shadow-lg z-50 p-4">
                         <p className="font-ad text-black text-lg">
-                        Our Machine Learning Model, trained on 100,000 facial data samples from 
-                        successful professionals, selects your ideal major based on your facial 
-                        attributes, with gender and racial bias addressed through meticulous data 
-                        processing.
+                          Our Machine Learning Model, trained on 100,000 facial
+                          data samples from successful professionals, selects
+                          your ideal major based on your facial attributes, with
+                          gender and racial bias addressed through meticulous
+                          data processing.
                         </p>
                         <button
                           className="mt-3 custom-pink-bg font-ad text-white text-lg font-semibold py-2 px-4 rounded-xl hover:bg-red-400 focus:outline-none focus:shadow-outline"
@@ -320,7 +300,7 @@ const Upload = () => {
                       {result.length > 0 ? (
                         // Conditionally render the <p> tag based on the first element of 'result'
                         <>
-                          <h1 class="text-4xl font-bold custom-pink-text mb-2">
+                          <h1 className="text-4xl font-bold custom-pink-text mb-2">
                             {result[0].className} {emojis[result[0].className]}
                           </h1>
                           <p className="output_prompt">
@@ -429,53 +409,6 @@ const Upload = () => {
               </div>
             </div>
           </div>
-        )}
-
-        {Files.length > 0 ? (
-          <div className="kb-attach-box">
-            <hr />
-            {Files.map((data, index) => {
-              const { id, filename, fileimage, datetime, filesize } = data;
-              return (
-                <div className="file-atc-box" key={index}>
-                  {filename.match(/.(jpg|jpeg|png|gif|svg)$/i) ? (
-                    <div className="file-image">
-                      {" "}
-                      <img src={fileimage} alt="" />
-                    </div>
-                  ) : (
-                    <div className="file-image">
-                      <i className="far fa-file-alt"></i>
-                    </div>
-                  )}
-                  <div className="file-detail">
-                    <h6>{filename}</h6>
-                    <p>
-                      <span>Size : {filesize}</span>
-                      <span className="ml-3">Modified Time : {datetime}</span>
-                    </p>
-                    <div className="file-actions">
-                      <button
-                        className="file-action-btn"
-                        onClick={() => DeleteFile(id)}
-                      >
-                        Delete
-                      </button>
-                      <a
-                        href={fileimage}
-                        className="file-action-btn"
-                        download={filename}
-                      >
-                        Download
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          ""
         )}
       </div>
     </div>
