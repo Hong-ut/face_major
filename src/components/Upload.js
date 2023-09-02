@@ -13,8 +13,8 @@ import {
   TwitterShareButton,
   TwitterIcon,
 } from "react-share";
-import kakao from "../assets/png/kakaotalk.png";
-import Kakaoad from "./Kakaoad";
+// import kakao from "../assets/png/kakaotalk.png";
+// import Kakaoad from "./Kakaoad";
 
 const URL = "https://teachablemachine.withgoogle.com/models/ims18YRgK/";
 const modelURL = URL + "model.json";
@@ -426,7 +426,7 @@ const Upload = () => {
                           borderRadius={24}
                         ></TwitterIcon>
                       </TwitterShareButton>
-                      <button
+                      {/* <button
                         onClick={() =>
                           Kakaoad("/", "FaceMajor")
                         }
@@ -436,7 +436,7 @@ const Upload = () => {
                           src={kakao}
                           alt={"Kakao Logo"}
                         />
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
