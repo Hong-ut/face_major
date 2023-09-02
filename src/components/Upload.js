@@ -417,7 +417,7 @@ const Upload = () => {
                         ></FacebookMessengerIcon>
                       </FacebookMessengerShareButton>
                       <TwitterShareButton
-                        style={{ marginRight: "20px" }}
+                        // style={{ marginRight: "20px" }}
                         url={currentUrl}
                       >
                         <TwitterIcon
