@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure } from '@headlessui/react'
 // import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import '../styles/NavBar.css'
-
+import einsteinFav from '../assets/png/einstein.png'
 
 export default function NavBar() {
   return (
@@ -29,6 +29,13 @@ export default function NavBar() {
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
 
+                <img
+                  href='/'
+                    className="inline-flex items-center border-b-2 border-transparent p-2 text-3xl font-ad custom-pink-text hover:border-gray-300 hover:text-red-400"
+                    alt='einstein favicon'
+                    src={einsteinFav}
+                  >
+                  </img>
                   <a
                     href='/'
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-3xl font-ad custom-pink-text hover:border-gray-300 hover:text-red-400"
